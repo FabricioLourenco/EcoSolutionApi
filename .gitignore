@@ -1,0 +1,12 @@
+/EcoSolution/EcoSolution.Service/bin
+/EcoSolution/EcoSolution.Service/obj
+/EcoSolution/EcoSolution.Infra.Data/bin
+/EcoSolution/EcoSolution.Infra.Data/obj
+/EcoSolution/EcoSolution.Infra.CrossCutting.Ioc/bin
+/EcoSolution/EcoSolution.Infra.CrossCutting.Ioc/obj
+/EcoSolution/EcoSolution.Infra.CrossCutting/bin
+/EcoSolution/EcoSolution.Infra.CrossCutting/obj
+/EcoSolution/EcoSolution.Domain/bin
+/EcoSolution/EcoSolution.Domain/obj
+/EcoSolution/EcoSolution/bin
+/EcoSolution/EcoSolution/obj
