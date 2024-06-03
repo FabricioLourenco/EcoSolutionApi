@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -12,6 +12,16 @@
     <Folder Include="Mappers\" />
     <Folder Include="Validators\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="1.1.2" />
+    <PackageReference Include="RestSharp" Version="111.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcoSolution.Domain\EcoSolution.Domain.csproj" />
+    <ProjectReference Include="..\EcoSolution.Infra.CrossCutting\EcoSolution.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>
