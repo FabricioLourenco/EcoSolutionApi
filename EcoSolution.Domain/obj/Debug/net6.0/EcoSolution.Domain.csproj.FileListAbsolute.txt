@@ -1,0 +1,12 @@
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\bin\Debug\net6.0\EcoSolution.Domain.deps.json
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\bin\Debug\net6.0\EcoSolution.Domain.dll
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\bin\Debug\net6.0\EcoSolution.Domain.pdb
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.AssemblyInfoInputs.cache
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.AssemblyInfo.cs
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.csproj.CoreCompileInputs.cache
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.sourcelink.json
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.dll
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\refint\EcoSolution.Domain.dll
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\EcoSolution.Domain.pdb
+D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Domain\obj\Debug\net6.0\ref\EcoSolution.Domain.dll
