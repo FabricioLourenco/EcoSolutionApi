@@ -1,5 +1,0 @@
-D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Infra.CrossCutting.Ioc\obj\Debug\net6.0\EcoSolution.Infra.CrossCutting.Ioc.GeneratedMSBuildEditorConfig.editorconfig
-D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Infra.CrossCutting.Ioc\obj\Debug\net6.0\EcoSolution.Infra.CrossCutting.Ioc.AssemblyInfoInputs.cache
-D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Infra.CrossCutting.Ioc\obj\Debug\net6.0\EcoSolution.Infra.CrossCutting.Ioc.AssemblyInfo.cs
-D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Infra.CrossCutting.Ioc\obj\Debug\net6.0\EcoSolution.Infra.CrossCutting.Ioc.csproj.CoreCompileInputs.cache
-D:\Development\Workspace\KemiaEcoSolution\EcoSolutionApi\EcoSolution.Infra.CrossCutting.Ioc\obj\Debug\net6.0\EcoSolution.Infra.CrossCutting.Ioc.sourcelink.json
