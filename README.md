@@ -1,42 +1,45 @@
-# KemiaEcoSolution
+# KemiaEcoSolution API
 
-Bem-vindo ao repositório do Sistema de Gestão de Dados para a Empresa Kemia! Este é um projeto de software que está nos estágios iniciais de desenvolvimento, utilizando o padrão de arquitetura MVC (Model-View-Controller).
+Bem-vindo ao repositório da **API de Gestão de Dados para a Empresa Kemia!** Este é um projeto de software em desenvolvimento, que fornece uma API para gerenciar dados da empresa, acessando um banco de dados PostgreSQL. A aplicação frontend que consumirá essa API será desenvolvida separadamente.
 
 ℹ️ **Sobre o Projeto**
 
-Neste repositório, você encontrará um sistema de gestão de dados em fase inicial de desenvolvimento, projetado para a empresa Kemia. O sistema tem como objetivo ajudar a empresa a gerenciar informações relacionadas aos seus dados de operação, produtos utilizados, relatórios personalizados e funcionários.
+Esta API foi criada para a empresa Kemia com o objetivo de gerenciar informações operacionais, produtos, relatórios personalizados e dados de funcionários. A API serve como backend, fornecendo endpoints que serão acessados por uma aplicação frontend.
 
 🎯 **Objetivos**
 
-O objetivo principal deste projeto é fornecer à empresa Kemia uma ferramenta eficiente para gerenciar e analisar seus dados de forma organizada e intuitiva. Neste estágio inicial, estamos concentrados em estabelecer a arquitetura básica do sistema e desenvolver as funcionalidades principais.
+O principal objetivo deste projeto é fornecer à empresa Kemia uma API eficiente para gerenciamento e análise de dados. Estamos focados em desenvolver os principais endpoints e a lógica de integração com o banco de dados.
 
 📁 **Estrutura do Projeto**
 
-O projeto segue a estrutura do padrão MVC (Model-View-Controller), onde:
+A API segue uma arquitetura REST, fornecendo serviços HTTP para criar, ler, atualizar e excluir dados (CRUD). O projeto está estruturado da seguinte maneira:
 
-Model: Responsável pela lógica de negócios e manipulação de dados.
-View: Responsável pela interface do usuário e apresentação dos dados.
-Controller: Responsável por receber e processar as requisições do usuário, interagindo com o modelo e atualizando a visualização.
-O código-fonte está organizado em diferentes diretórios, seguindo a estrutura padrão do MVC.
+- **Controllers**: Lidam com as requisições HTTP e chamam os serviços apropriados.
+- **Services**: Contêm a lógica de negócios, manipulando dados e chamando os repositórios.
+- **Repositories**: Interagem diretamente com o banco de dados PostgreSQL.
+- **Models**: Definem as entidades do sistema e suas relações.
 
 🛠️ **Tecnologias Utilizadas**
 
-O sistema está sendo desenvolvido utilizando as seguintes tecnologias:
+A API está sendo desenvolvida utilizando as seguintes tecnologias:
 
-Linguagem de Programação: C#
-Framework MVC: ASP.NET MVC
-Banco de Dados: PostgreSQL
+- **Linguagem de Programação**: C#
+- **Framework**: ASP.NET Core Web API
+- **Banco de Dados**: PostgreSQL
+- **ORM**: Entity Framework Core para integração com o banco de dados
 
-🤝 **Contribuição**
+🚀 **Endpoints Principais**
 
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias, correções de bugs ou desejar adicionar novos recursos ao sistema, sinta-se à vontade para abrir uma issue ou enviar um pull request. Este é um projeto de código aberto e a colaboração da comunidade é fundamental para seu aprimoramento contínuo.
+A API fornecerá endpoints para operações CRUD, incluindo (mas não se limitando a):
 
-🔧 **Como Usar**
+- Gerenciamento de produtos
+- Relatórios personalizados
+- Gerenciamento de funcionários
+- Consultas operacionais
 
-Como o sistema ainda está em fase inicial de desenvolvimento, ainda não há uma versão pronta para uso. Se desejar, você pode clonar o repositório e explorar o código-fonte atual.
+📚 **Configurações e Instalação**
 
-⚖️ **Licença**
-
-Este projeto é disponibilizado sob a licença MIT. Sinta-se à vontade para utilizar, modificar e distribuir o código conforme suas necessidades, desde que mantenha a atribuição adequada e inclua uma cópia da licença.
-
-
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seuusuario/KemiaEcoSolutionApi.git
+   cd KemiaEcoSolutionApi
