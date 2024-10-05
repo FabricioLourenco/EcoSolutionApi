@@ -1,4 +1,9 @@
-﻿namespace EcoSolution.Infra.CrossCutting.Ioc
+﻿using EcoSolution.Domain.DTos.Base;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+
+namespace EcoSolution.Infra.CrossCutting.Ioc
 {
     public static class ContainerAppBuilder
     {
@@ -8,11 +13,11 @@
             {
                 var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
                 var exception = exceptionHandlerPathFeature.Error;
-                await context.Response.WriteAsJsonAsync(new GenericResponseDto
+                await context.Response.WriteAsJsonAsync(new GenericResponseDTo
                 {
                     Sucesso = false,
                     Mensagens = new List<string>() { exception.Message }
-                }); ;
+                });
 
             }));
             return builder;

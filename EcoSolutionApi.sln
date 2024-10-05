@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolutionApi", "EcoSolutionApi\EcoSolutionApi.csproj", "{0D0EC92F-44E9-4005-A08F-7517FAB595E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolutionApi", "EcoSolutionApi\EcoSolutionApi.csproj", "{0D0EC92F-44E9-4005-A08F-7517FAB595E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{4C652E2B-1F71-471E-B400-E1A560DA967D}"
 EndProject
@@ -13,17 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{F8784BBF-E4DD-4041-B0E9-074663A97C6A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 -Documentacao", "5 -Documentacao", "{3CEC248B-4C9B-4BDE-A2AB-3018584E6AA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolution.Domain", "EcoSolution.Domain\EcoSolution.Domain.csproj", "{FE38F97E-996D-4D7A-9648-54B14BCA3352}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolution.Domain", "EcoSolution.Domain\EcoSolution.Domain.csproj", "{FE38F97E-996D-4D7A-9648-54B14BCA3352}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolution.Service", "EcoSolution.Service\EcoSolution.Service.csproj", "{80599200-FA1F-4F1D-BC80-F4A9B7B13A5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolution.Service", "EcoSolution.Service\EcoSolution.Service.csproj", "{80599200-FA1F-4F1D-BC80-F4A9B7B13A5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolution.Infra.CrossCutting", "EcoSolution.Infra.CrossCutting\EcoSolution.Infra.CrossCutting.csproj", "{C6969F65-06F8-44F2-8AA2-C5555EA5C19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolution.Infra.CrossCutting", "EcoSolution.Infra.CrossCutting\EcoSolution.Infra.CrossCutting.csproj", "{C6969F65-06F8-44F2-8AA2-C5555EA5C19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolution.Infra.CrossCutting.Ioc", "EcoSolution.Infra.CrossCutting.Ioc\EcoSolution.Infra.CrossCutting.Ioc.csproj", "{166A7B77-20A5-41BC-96CC-72270ED11EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolution.Infra.CrossCutting.Ioc", "EcoSolution.Infra.CrossCutting.Ioc\EcoSolution.Infra.CrossCutting.Ioc.csproj", "{166A7B77-20A5-41BC-96CC-72270ED11EF2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoSolution.Infra.Data", "EcoSolution.Infra.Data\EcoSolution.Infra.Data.csproj", "{3CAB9296-F9AA-48CC-ACA6-029A824CEE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoSolution.Infra.Data", "EcoSolution.Infra.Data\EcoSolution.Infra.Data.csproj", "{3CAB9296-F9AA-48CC-ACA6-029A824CEE3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

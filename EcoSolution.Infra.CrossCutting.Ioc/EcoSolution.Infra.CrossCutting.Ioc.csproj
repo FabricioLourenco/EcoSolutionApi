@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.33" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.33" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcoSolution.Infra.Data\EcoSolution.Infra.Data.csproj" />
+    <ProjectReference Include="..\EcoSolution.Service\EcoSolution.Service.csproj" />
+  </ItemGroup>
+
 </Project>
