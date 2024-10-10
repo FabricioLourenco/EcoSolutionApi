@@ -1,10 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using EcoSolution.Domain.Entities;
+using EcoSolution.Domain.Entities.Base;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoSolution.Infra.Data.Context
 {
@@ -16,6 +13,20 @@ namespace EcoSolution.Infra.Data.Context
         }
 
         #region DbSets
+
+        public DbSet<Arquivo> Arquivo { get; set; }
+
+        public DbSet<ArquivoVinculado> ArquivoVinculado { get; set; }
+
+        public DbSet<Equipamento> Equipamento { get; set; }
+
+        public DbSet<Manual> Manual { get; set; }
+
+        public DbSet<Material> Material { get; set; }
+
+        public DbSet<Tarefa> Tarefa { get; set; }
+
+        public DbSet<Usuario> Usuario { get; set; }
 
         #endregion
 
