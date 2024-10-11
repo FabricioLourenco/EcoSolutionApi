@@ -9,7 +9,7 @@ namespace EcoSolution.Domain.Entities
 
         public FuncaoEnum Funcao { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
         public string Login { get; set; }
 

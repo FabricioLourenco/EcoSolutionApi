@@ -13,7 +13,7 @@ namespace EcoSolution.Domain.Entities
 
         public DateTime Horario { get; set; }
 
-        public bool Ativo { get; set; }
+        public bool Ativo { get; set; } = true;
 
         public DateTime DataInsercao { get; set; } = DateTime.Now;
 
