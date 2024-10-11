@@ -9,11 +9,11 @@ namespace EcoSolution.Domain.Entities
 
         public FuncaoEnum Funcao { get; set; }
 
+        public long EstacaoId { get; set; }
+
+        public string ChaveSecreta { get; set; }
+
         public bool Ativo { get; set; } = true;
-
-        public string Login { get; set; }
-
-        public string Senha { get; set; }
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;
 

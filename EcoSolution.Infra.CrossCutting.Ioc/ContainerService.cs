@@ -1,11 +1,13 @@
 ﻿using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Domain.Interface.Infra.Data;
+using EcoSolution.Domain.Interface.Infra.Data.Repositories;
 using EcoSolution.Infra.CrossCutting.DI;
 using EcoSolution.Infra.CrossCutting.Handlers.Jwt;
 using EcoSolution.Infra.CrossCutting.Handlers.Notifications;
 using EcoSolution.Infra.CrossCutting.Handlers.Validators;
 using EcoSolution.Infra.Data.Context;
 using EcoSolution.Infra.Data.Data;
+using EcoSolution.Infra.Data.Repositories;
 using EcoSolution.Service.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -48,6 +50,13 @@ namespace EcoSolution.Infra.CrossCutting.Ioc
             services.AddScoped(typeof(INotificationHandler), typeof(NotificationHandler));
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddScoped<IArquivoRepository, ArquivoRepository>();
+            services.AddScoped<IEquipamentoRepository, EquipamentoRepository>();
+            services.AddScoped<IManualRepository, ManualRepository>();
+            services.AddScoped<IMaterialRepository, MaterialRepository>();
+            services.AddScoped<ITarefaRepository, TarefaRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             return services;
         }

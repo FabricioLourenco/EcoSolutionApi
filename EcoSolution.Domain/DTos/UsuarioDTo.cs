@@ -1,6 +1,4 @@
-﻿using EcoSolution.Domain.Entities.Base;
-using EcoSolution.Domain.Entities;
-using EcoSolution.Domain.Enuns;
+﻿using EcoSolution.Domain.Enuns;
 
 namespace EcoSolution.Domain.DTos
 {
@@ -10,9 +8,10 @@ namespace EcoSolution.Domain.DTos
 
         public FuncaoEnum Funcao { get; set; }
 
-        public string Login { get; set; }
+        public long EstacaoId { get; set; }
 
-        public string Senha { get; set; }
+        public bool Ativo { get; set; } = true;
+
 
     }
 }

@@ -1,5 +1,4 @@
-﻿using EcoSolution.Domain.DTos.Base;
-using EcoSolution.Domain.Enuns;
+﻿using EcoSolution.Domain.Enuns;
 
 namespace EcoSolution.Domain.DTos
 {
