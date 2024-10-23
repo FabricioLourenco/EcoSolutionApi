@@ -4,9 +4,13 @@
     {
         public long Id { get; set; }
 
-        public string InscricaoFederal { get; set; }
+        public long EstacaoId { get; set; }
 
-        public long ClienteId { get; set; }
+        public string Nome { get; set; }
+
+        public string Funcao { get; set; }
+
+        public long UsuarioId { get; set; }
 
         public string JwtPrivateKey { get; set; }
 

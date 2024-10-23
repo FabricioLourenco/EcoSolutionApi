@@ -2,7 +2,7 @@
 {
     public class LoginDTo
     {
-        public string InscricaoFederal { get; set; }
+        public long EstacaoId { get; set; }
 
         public string ChaveSecreta { get; set; }
 

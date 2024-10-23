@@ -3,6 +3,7 @@ using System;
 using EcoSolution.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EcoSolution.Infra.Data.Migrations
 {
     [DbContext(typeof(EcoSolutionContext))]
-    partial class EcoSolutionContextModelSnapshot : ModelSnapshot
+    [Migration("20241023002928_Ajuste tabela Usuario")]
+    partial class AjustetabelaUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -14,8 +14,9 @@ namespace EcoSolution.Infra.CrossCutting.Handlers.Jwt
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[] {
-                    new Claim("InscricaoFederal", options.InscricaoFederal),
-                    new Claim("ClienteId", options.ClienteId.ToString()),
+                    new Claim("EstacaoId", options.EstacaoId.ToString()),
+                    new Claim("UsuarioId", options.UsuarioId.ToString()),
+                    new Claim("Nome", options.Nome.ToString()),
                     new Claim(ClaimTypes.Role, role)
                 }),
                 Expires = options.ExpireIn,

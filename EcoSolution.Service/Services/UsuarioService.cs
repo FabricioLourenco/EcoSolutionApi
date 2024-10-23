@@ -19,32 +19,45 @@ namespace EcoSolution.Service.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        #region Private Methods
+        #region Private Methods  
         #endregion
 
         #region Public Methods
 
-        public Task<bool> AlterarStatusUsuario(bool status, long estacaoId)
+        public async Task<Usuario> InserirUsuario(UsuarioDTo model)
         {
-            throw new NotImplementedException();
+            var usuario = await _usuarioRepository.BuscarUsuario(model.EstacaoId);
+            if (usuario == null)
+                usuario = _mapper.Map<Usuario>(model);
+            else
+                return usuario;
+
+            return await _usuarioRepository.InserirUsuario(usuario);
         }
 
-        public Task<Usuario?> BuscarUsuario(long estacaoId, string chaveSecreta)
+        public async Task<bool> AlterarStatusUsuario(bool status, long estacaoId)
         {
-            throw new NotImplementedException();
+            var usuario = await BuscarUsuario(estacaoId);
+            if(usuario == null)
+                throw new Exception($"Usuario pertencente ao estacaoId: {estacaoId}, não foi encontrado");
+
+            usuario.Ativo = status;
+            await _usuarioRepository.AtualizarUsuario(usuario);
+
+            return true;
+
         }
 
-        public Task<Usuario> BuscarUsuario(long estacaoId)
+        public async Task<Usuario> BuscarUsuario(long estacaoId)
         {
-            throw new NotImplementedException();
+            return await _usuarioRepository.BuscarUsuario(estacaoId);
         }
 
-        public Task<Usuario> InserirUsuario(UsuarioDTo model)
+        public async Task<Usuario?> BuscarUsuario(long estacaoId, string chaveSecreta)
         {
-            throw new NotImplementedException();
+            return await _usuarioRepository.BuscarUsuario(estacaoId, chaveSecreta);
         }
-
-
+        
         #endregion
 
     }

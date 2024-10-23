@@ -3,7 +3,6 @@ using AutoMapper;
 using EcoSolution.Domain.Common;
 using EcoSolution.Infra.CrossCutting.Ioc;
 using EcoSolutionApi.Filters;
-using EcoSolutionApi.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoSolutionApi
@@ -83,7 +82,8 @@ namespace EcoSolutionApi
 
             app.UseRouting();
 
-            app.UseApiKey();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.Register();
 

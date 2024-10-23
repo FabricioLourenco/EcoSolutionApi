@@ -34,7 +34,10 @@ namespace EcoSolutionApi.Controllers.V1
         public async Task<IActionResult> AlterarStatusUsuario([FromBody] StatusUsuarioDTo model)
         {
             var status = await _usuarioService.AlterarStatusUsuario(model.Usuario, model.EstacaoId);
-            return QResult();
+            if(status)
+                return QResult("Usuario alterado com sucesso");
+            else
+                return QResult();
         }
 
     }

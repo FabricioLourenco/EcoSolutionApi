@@ -2,6 +2,7 @@
 using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Infra.CrossCutting.Handlers.Notifications;
+using EcoSolutionApi.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,14 +26,10 @@ namespace EcoSolutionApi.Controllers.V1
         [HttpPost]
         [Route("token")]
         [AllowAnonymous]
-        public IActionResult Login(LoginDTo login)
+        [TypeFilter(typeof(ApiKeyAttribute))]
+        public async Task<IActionResult> Login(LoginDTo login)
         {
-            var validaChave = _autenticacaoService.ValidarChave(login);
-            if (validaChave)
-                return QResult(_autenticacaoService.GetToken(login));
-
-            _notificationHandler.AddNotification("Dados Inválidos.");
-            return QResult(null);
+            return QResult(await _autenticacaoService.GetToken(login));
         }
     }
 }
