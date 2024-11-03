@@ -1,4 +1,5 @@
 ﻿using EcoSolution.Domain.Enuns;
+using EcoSolution.Domain.DTos.Base;
 
 namespace EcoSolution.Domain.DTos
 {
@@ -8,9 +9,13 @@ namespace EcoSolution.Domain.DTos
 
         public string Descricao { get; set; }
 
-        public DateTime DataCadastro { get; set; } = DateTime.Now;
-
         public SetorEnum Setor { get; set; }
+
+        public EquipamentoDTo? Equipamento { get; set; }   
+
+        public MaterialDTo? Material { get; set; }
+
+        public List<ArquivoVinculadoDTo>? ArquivosVinculados { get; set; }
 
     }
 }

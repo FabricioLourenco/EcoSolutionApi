@@ -1,4 +1,5 @@
 ﻿using EcoSolution.Domain.Enuns;
+using EcoSolution.Domain.DTos.Base;
 
 namespace EcoSolution.Domain.DTos
 {
@@ -13,6 +14,10 @@ namespace EcoSolution.Domain.DTos
         public UnidadeMedidaEnum UnidadeMedida { get; set; }
 
         public SetorEnum Setor { get; set; }
+
+        public ManualDTo? Manual { get; set; }
+
+        public List<ArquivoVinculadoDTo>? ArquivosVinculados { get; set; }
 
     }
 }
