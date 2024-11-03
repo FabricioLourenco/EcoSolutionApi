@@ -1,6 +1,16 @@
-﻿namespace EcoSolution.Domain.Interface.Application.Services
+﻿using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.Entities;
+
+namespace EcoSolution.Domain.Interface.Application.Services
 {
     public interface IEquipamentoService
     {
+        Task<Equipamento> InserirEquipamento(EquipamentoDTo model);
+
+        Task<List<Equipamento>> BuscarEquipamentos();
+
+        Task<Equipamento> AtualizarEquipamento(EquipamentoDTo model);
+
+        Task<bool> ExcluirEquipamento(long equipamentoId);
     }
 }

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.Entities;
 using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Domain.Interface.Infra.Data.Repositories;
 using EcoSolution.Infra.CrossCutting.DI;
@@ -21,7 +23,27 @@ namespace EcoSolution.Service.Services
         #endregion
 
         #region Public Methods
-        #endregion
 
+        public Task<Tarefa> InserirTarefa(TarefaDTo model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Tarefa>> BuscarTarefas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Tarefa> AtualizarTarefa(TarefaDTo model)
+        {
+            throw new NotImplementedException();
+        }
+      
+        public Task<bool> ExcluirTarefa(long tarefaId)
+        {
+            throw new NotImplementedException();
+        }
+      
+        #endregion
     }
 }

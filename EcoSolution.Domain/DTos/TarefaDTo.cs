@@ -1,11 +1,5 @@
-﻿using EcoSolution.Domain.Entities.Base;
-using EcoSolution.Domain.Entities;
-using EcoSolution.Domain.Enuns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EcoSolution.Domain.Enuns;
+using EcoSolution.Domain.DTos.Base;
 
 namespace EcoSolution.Domain.DTos
 {
@@ -18,6 +12,16 @@ namespace EcoSolution.Domain.DTos
         public SetorEnum Setor { get; set; }
 
         public DateTime Horario { get; set; }
+
+        public bool Ativo { get; set; } = true;
+
+        public EquipamentoDTo? Equipamento { get; set; }
+
+        public MaterialDTo? Material { get; set; }
+
+        public ManualDTo? Manual { get; set; }
+
+        public List<ArquivoVinculadoDTo?> ArquivosVinculados { get; set; }
 
     }
 }
