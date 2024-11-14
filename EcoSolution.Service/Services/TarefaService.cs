@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Domain.Interface.Infra.Data.Repositories;
@@ -12,11 +13,14 @@ namespace EcoSolution.Service.Services
 
         private readonly IMapper _mapper;
         private readonly ITarefaRepository _tarefaRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public TarefaService(IMapper mapper, ITarefaRepository tarefaRepository)
+        public TarefaService(IMapper mapper, ITarefaRepository tarefaRepository, IUsuarioRepository usuarioRepository)
         {
             _mapper = mapper;
             _tarefaRepository = tarefaRepository;
+            _usuarioRepository = usuarioRepository;
+
         }
 
         #region Private Methods
@@ -24,24 +28,38 @@ namespace EcoSolution.Service.Services
 
         #region Public Methods
 
-        public Task<Tarefa> InserirTarefa(TarefaDTo model)
+        public async Task<Tarefa> InserirTarefa(TarefaDTo model, string estacaoId)
         {
-            throw new NotImplementedException();
+            var usuario = await _usuarioRepository.BuscarUsuario(long.Parse(estacaoId));
+            if (usuario == null)
+                throw new Exception($"Usuario pertencente ao estacaoId: '{estacaoId}', não foi encontrado");
+
+            var tarefa = _mapper.Map<Tarefa>(model);
+            tarefa.Usuario = usuario;
+            tarefa.UsuarioId = usuario.Id;
+            return await _tarefaRepository.InserirTarefa(tarefa);
         }
 
-        public Task<List<Tarefa>> BuscarTarefas()
+        public async Task<List<Tarefa>> BuscarTarefas()
         {
-            throw new NotImplementedException();
+            return (await _tarefaRepository.BuscarTarefas()).ToList();
         }
 
-        public Task<Tarefa> AtualizarTarefa(TarefaDTo model)
+        public async Task<Tarefa> AtualizarTarefa(UpdateTarefaDTo model, string estacaoId)
         {
-            throw new NotImplementedException();
+            var usuario = await _usuarioRepository.BuscarUsuario(long.Parse(estacaoId));
+            if (usuario == null)
+                throw new Exception($"Usuario pertencente ao estacaoId: '{estacaoId}', não foi encontrado");
+
+            var tarefa = _mapper.Map<Tarefa>(model);
+            tarefa.Usuario = usuario;
+            tarefa.UsuarioId = usuario.Id;
+            return await _tarefaRepository.AtualizarTarefa(tarefa);
         }
       
-        public Task<bool> ExcluirTarefa(long tarefaId)
+        public async Task<bool> ExcluirTarefa(long tarefaId)
         {
-            throw new NotImplementedException();
+            return await _tarefaRepository.ExcluirTarefa(tarefaId);
         }
       
         #endregion

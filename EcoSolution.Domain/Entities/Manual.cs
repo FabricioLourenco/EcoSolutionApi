@@ -21,7 +21,7 @@ namespace EcoSolution.Domain.Entities
 
         public Material Material { get; set; }
 
-        public List<ArquivoVinculado> ArquivosVinculados { get; set; }
+        public List<ArquivoVinculado>? ArquivosVinculados { get; set; }
 
 
     }

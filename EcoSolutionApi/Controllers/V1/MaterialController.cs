@@ -1,7 +1,7 @@
 ﻿using Asp.Versioning;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Interface.Application.Services;
-using EcoSolution.Service.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,7 +44,7 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("editar-material")]
-        public async Task<IActionResult> AtualizarMaterial([FromBody] MaterialDTo model)
+        public async Task<IActionResult> AtualizarMaterial([FromBody] UpdateMaterialDTo model)
         {
             var material = await _materialService.AtualizarMaterial(model);
             return QResult(material);
@@ -54,9 +54,9 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("excluir-material")]
-        public async Task<IActionResult> ExcluirMaterial([FromBody] long tarefaId)
+        public async Task<IActionResult> ExcluirMaterial([FromBody] RemoverDTo model)
         {
-            var material = await _materialService.ExcluirMaterial(tarefaId);
+            var material = await _materialService.ExcluirMaterial(model.Id);
             return QResult(material);
         }
 

@@ -1,10 +1,11 @@
 ﻿using EcoSolution.Domain.Enuns;
-using EcoSolution.Domain.DTos.Base;
 
-namespace EcoSolution.Domain.DTos
+namespace EcoSolution.Domain.DTos.Base
 {
-    public class TarefaDTo
+    public class UpdateTarefaDTo
     {
+        public long Id { get; set; }
+
         public string Titulo { get; set; }
 
         public string Descricao { get; set; }
@@ -22,6 +23,5 @@ namespace EcoSolution.Domain.DTos
         public ManualDTo? Manual { get; set; }
 
         public List<ArquivoVinculadoDTo>? ArquivosVinculados { get; set; }
-
     }
 }

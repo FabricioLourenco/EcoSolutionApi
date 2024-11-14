@@ -1,4 +1,5 @@
 ﻿using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 
 namespace EcoSolution.Domain.Interface.Application.Services
@@ -9,7 +10,7 @@ namespace EcoSolution.Domain.Interface.Application.Services
 
         Task<List<Material>> BuscarMateriais();
 
-        Task<Material> AtualizarMaterial(MaterialDTo model);
+        Task<Material> AtualizarMaterial(UpdateMaterialDTo model);
 
         Task<bool> ExcluirMaterial(long materialId);
     }

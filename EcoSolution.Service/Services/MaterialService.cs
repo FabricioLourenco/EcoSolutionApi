@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Domain.Interface.Infra.Data.Repositories;
@@ -12,11 +13,13 @@ namespace EcoSolution.Service.Services
 
         private readonly IMapper _mapper;
         private readonly IMaterialRepository _materialRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public MaterialService(IMapper mapper, IMaterialRepository materialRepository)
+        public MaterialService(IMapper mapper, IMaterialRepository materialRepository, IUsuarioRepository usuarioRepository)
         {
             _mapper = mapper;
             _materialRepository = materialRepository;
+            _usuarioRepository = usuarioRepository;
         }
 
         #region Private Methods
@@ -24,26 +27,28 @@ namespace EcoSolution.Service.Services
 
         #region Public Methods
      
-        public Task<Material> InserirMaterial(MaterialDTo model)
+        public async Task<Material> InserirMaterial(MaterialDTo model)
         {
-            throw new NotImplementedException();
+            var material = _mapper.Map<Material>(model);
+            return await _materialRepository.InserirMaterial(material);
         }
 
-        public Task<List<Material>> BuscarMateriais()
+        public async Task<List<Material>> BuscarMateriais()
         {
-            throw new NotImplementedException();
+            return (await _materialRepository.BuscarMateriais()).ToList();
         }
 
-        public Task<Material> AtualizarMaterial(MaterialDTo model)
+        public async Task<Material> AtualizarMaterial(UpdateMaterialDTo model)
         {
-            throw new NotImplementedException();
+            var material = _mapper.Map<Material>(model);
+            return await _materialRepository.AtualizarMaterial(material);
         }
 
-        public Task<bool> ExcluirMaterial(long materialId)
+        public async Task<bool> ExcluirMaterial(long materialId)
         {
-            throw new NotImplementedException();
+            return await _materialRepository.ExcluirMaterial(materialId);
         }
-      
+
         #endregion
     }
 }

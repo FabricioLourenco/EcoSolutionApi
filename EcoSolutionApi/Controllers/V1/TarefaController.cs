@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Interface.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,8 @@ namespace EcoSolutionApi.Controllers.V1
         [Route("inserir-tarefa")]
         public async Task<IActionResult> InserirTarefa([FromBody] TarefaDTo model)
         {
-            var tarefa = await _tarefaService.InserirTarefa(model);
+            var estacaoId = GetValueByClaims(GetToken(), "EstacaoId");
+            var tarefa = await _tarefaService.InserirTarefa(model, estacaoId.ToString());
             return QResult(tarefa);
         }
 
@@ -42,9 +44,10 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("editar-tarefa")]
-        public async Task<IActionResult> AtualizarTarefa([FromBody] TarefaDTo model)
+        public async Task<IActionResult> AtualizarTarefa([FromBody] UpdateTarefaDTo model)
         {
-            var tarefa = await _tarefaService.AtualizarTarefa(model);
+            var estacaoId = GetValueByClaims(GetToken(), "EstacaoId");
+            var tarefa = await _tarefaService.AtualizarTarefa(model, estacaoId.ToString());
             return QResult(tarefa);
         }
 
@@ -52,9 +55,9 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("excluir-tarefa")]
-        public async Task<IActionResult> ExcluirTarefa([FromBody] long tarefaId)
+        public async Task<IActionResult> ExcluirTarefa([FromBody] RemoverDTo model)
         {
-            var tarefa = await _tarefaService.ExcluirTarefa(tarefaId);
+            var tarefa = await _tarefaService.ExcluirTarefa(model.Id);
             return QResult(tarefa);
         }
 

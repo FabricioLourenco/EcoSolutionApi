@@ -47,7 +47,7 @@ namespace EcoSolution.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Arquivo");
+                    b.ToTable("Arquivo", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Base.ArquivoVinculado", b =>
@@ -96,7 +96,7 @@ namespace EcoSolution.Infra.Data.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("ArquivoVinculado");
+                    b.ToTable("ArquivoVinculado", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Equipamento", b =>
@@ -130,7 +130,7 @@ namespace EcoSolution.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Equipamento");
+                    b.ToTable("Equipamento", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Manual", b =>
@@ -169,7 +169,7 @@ namespace EcoSolution.Infra.Data.Migrations
                     b.HasIndex("MaterialId")
                         .IsUnique();
 
-                    b.ToTable("Manual");
+                    b.ToTable("Manual", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Material", b =>
@@ -202,7 +202,7 @@ namespace EcoSolution.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Material");
+                    b.ToTable("Material", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Tarefa", b =>
@@ -256,7 +256,7 @@ namespace EcoSolution.Infra.Data.Migrations
                     b.HasIndex("UsuarioId")
                         .IsUnique();
 
-                    b.ToTable("Tarefa");
+                    b.ToTable("Tarefa", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Usuario", b =>
@@ -289,7 +289,7 @@ namespace EcoSolution.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuario");
+                    b.ToTable("Usuario", (string)null);
                 });
 
             modelBuilder.Entity("EcoSolution.Domain.Entities.Base.ArquivoVinculado", b =>

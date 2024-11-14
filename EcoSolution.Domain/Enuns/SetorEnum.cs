@@ -2,5 +2,6 @@
 {
     public enum SetorEnum
     {
+        lavagem = 1
     }
 }

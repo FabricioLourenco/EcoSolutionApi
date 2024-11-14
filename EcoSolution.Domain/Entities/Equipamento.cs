@@ -17,9 +17,9 @@ namespace EcoSolution.Domain.Entities
 
         public DateTime Manutencao { get; set; }
 
-        public Manual Manual { get; set; }
+        public Manual? Manual { get; set; }
 
-        public List<ArquivoVinculado> ArquivosVinculados { get; set; }
+        public List<ArquivoVinculado>? ArquivosVinculados { get; set; }
 
     }
 }
