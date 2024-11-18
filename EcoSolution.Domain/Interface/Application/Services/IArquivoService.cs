@@ -9,7 +9,7 @@ namespace EcoSolution.Domain.Interface.Application.Services
 
         Task<List<Arquivo>> BuscarArquivos();
 
-        Task<Arquivo> AtualizarArquivo(ArquivoDTo model);
+        Task<Arquivo> AtualizarArquivo(UpdateArquivoDTo model);
 
         Task<bool> ExcluirArquivo(long arquivoId);
     }

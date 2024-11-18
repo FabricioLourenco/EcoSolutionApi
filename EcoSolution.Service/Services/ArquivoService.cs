@@ -10,12 +10,12 @@ namespace EcoSolution.Service.Services
     public class ArquivoService : IArquivoService, IScopedDependency
     {
 
-        private readonly IMapper _maper;
+        private readonly IMapper _mapper;
         private readonly IArquivoRepository _arquivoRepository;
 
         public ArquivoService(IMapper mapper, IArquivoRepository arquivoRepository)
         {
-            _maper = mapper;
+            _mapper = mapper;
             _arquivoRepository = arquivoRepository;
         }
       
@@ -24,23 +24,25 @@ namespace EcoSolution.Service.Services
 
         #region Public Methods
 
-        public Task<Arquivo> InserirArquivo(ArquivoDTo model)
+        public async Task<Arquivo> InserirArquivo(ArquivoDTo model)
         {
-            throw new NotImplementedException();
+            var arquivo = _mapper.Map<Arquivo>(model);
+            return await _arquivoRepository.InserirArquivo(arquivo);
         }
 
-        public Task<List<Arquivo>> BuscarArquivos()
+        public async Task<List<Arquivo>> BuscarArquivos()
         {
-            throw new NotImplementedException();
+            return (await _arquivoRepository.BuscarArquivos()).ToList();
         }
 
-        public Task<Arquivo> AtualizarArquivo(ArquivoDTo model)
+        public async Task<Arquivo> AtualizarArquivo(UpdateArquivoDTo model)
         {
-            throw new NotImplementedException();
+            var arquivo = _mapper.Map<Arquivo>(model);
+            return await _arquivoRepository.AtualizarArquivo(arquivo);
         }
-        public Task<bool> ExcluirArquivo(long arquivoId)
+        public async Task<bool> ExcluirArquivo(long arquivoId)
         {
-            throw new NotImplementedException();
+            return await _arquivoRepository.ExcluirArquivo(arquivoId);
         }
 
         #endregion

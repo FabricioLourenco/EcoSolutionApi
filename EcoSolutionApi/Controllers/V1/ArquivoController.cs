@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EcoSolutionApi.Controllers.V1
 {
+    [ApiController]
+    [ApiVersion(1.0)]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ArquivoController : QControllerBase
     {
 
@@ -40,7 +43,7 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("editar-arquivo")]
-        public async Task<IActionResult> AtualizarArquivo([FromBody] ArquivoDTo model)
+        public async Task<IActionResult> AtualizarArquivo([FromBody] UpdateArquivoDTo model)
         {
             var arquivo = await _arquivoService.AtualizarArquivo(model);
             return QResult(arquivo);
@@ -50,9 +53,9 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("excluir-arquivo")]
-        public async Task<IActionResult> ExcluirArquivo([FromBody] long tarefaId)
+        public async Task<IActionResult> ExcluirArquivo([FromBody] RemoverDTo model)
         {
-            var arquivo = await _arquivoService.ExcluirArquivo(tarefaId);
+            var arquivo = await _arquivoService.ExcluirArquivo(model.Id);
             return QResult(arquivo);
         }
 

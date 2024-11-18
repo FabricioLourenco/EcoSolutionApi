@@ -9,6 +9,7 @@ namespace EcoSolution.Service.Mappers
         public ArquivoMapper()
         {
             CreateMap<ArquivoDTo, Arquivo>().ReverseMap();
+            CreateMap<UpdateArquivoDTo, Arquivo>().ReverseMap();
         }
     }
 }
