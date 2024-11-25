@@ -3,6 +3,7 @@
     public class UpdateArquivoDTo
     {
         public long Id { get; set; }
+
         public string NomeArquivo { get; set; }
 
         public string TipoArquivo { get; set; }

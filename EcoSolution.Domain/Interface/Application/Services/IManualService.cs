@@ -1,4 +1,5 @@
 ﻿using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 
 namespace EcoSolution.Domain.Interface.Application.Services
@@ -9,7 +10,7 @@ namespace EcoSolution.Domain.Interface.Application.Services
 
         Task<List<Manual>> BuscarManuais();
 
-        Task<Manual> AtualizarManual(ManualDTo model);
+        Task<Manual> AtualizarManual(UpdateManualDTo model);
 
         Task<bool> ExcluirManual(long manualId);
     }

@@ -19,7 +19,7 @@ namespace EcoSolution.Domain.Entities
 
         public List<ArquivoVinculado> ArquivosVinculados { get; set; }
 
-        public Tarefa Tarefa { get; set; }
+        public List<Tarefa> Tarefa { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Interface.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +44,7 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("editar-manual")]
-        public async Task<IActionResult> AtualizarManual([FromBody] ManualDTo model)
+        public async Task<IActionResult> AtualizarManual([FromBody] UpdateManualDTo model)
         {
             var manual = await _manualService.AtualizarManual(model);
             return QResult(manual);
@@ -53,9 +54,9 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("excluir-manual")]
-        public async Task<IActionResult> ExcluirManual([FromBody] long manualId)
+        public async Task<IActionResult> ExcluirManual([FromBody] RemoverDTo model)
         {
-            var manual = await _manualService.ExcluirManual(manualId);
+            var manual = await _manualService.ExcluirManual(model.Id);
             return QResult(manual);
         }
 
