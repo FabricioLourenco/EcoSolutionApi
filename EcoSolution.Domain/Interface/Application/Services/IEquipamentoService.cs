@@ -1,4 +1,5 @@
 ﻿using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 
 namespace EcoSolution.Domain.Interface.Application.Services
@@ -9,7 +10,7 @@ namespace EcoSolution.Domain.Interface.Application.Services
 
         Task<List<Equipamento>> BuscarEquipamentos();
 
-        Task<Equipamento> AtualizarEquipamento(EquipamentoDTo model);
+        Task<Equipamento> AtualizarEquipamento(UpdateEquipamentoDTo model);
 
         Task<bool> ExcluirEquipamento(long equipamentoId);
     }

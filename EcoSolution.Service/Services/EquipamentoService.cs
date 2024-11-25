@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Entities;
 using EcoSolution.Domain.Interface.Application.Services;
 using EcoSolution.Domain.Interface.Infra.Data.Repositories;
@@ -10,12 +11,12 @@ namespace EcoSolution.Service.Services
     public class EquipamentoService : IEquipamentoService, IScopedDependency
     {
 
-        private readonly IMapper _maper;
+        private readonly IMapper _mapper;
         private readonly IEquipamentoRepository _equipamentoRepository;
 
         public EquipamentoService(IMapper mapper, IEquipamentoRepository equipamentoRepository)
         {
-            _maper = mapper;
+            _mapper = mapper;
             _equipamentoRepository = equipamentoRepository;
         }
       
@@ -24,24 +25,26 @@ namespace EcoSolution.Service.Services
 
         #region Public Methods
 
-        public Task<Equipamento> InserirEquipamento(EquipamentoDTo model)
+        public async Task<Equipamento> InserirEquipamento(EquipamentoDTo model)
         {
-            throw new NotImplementedException();
+            var equipamento = _mapper.Map<Equipamento>(model);
+            return await _equipamentoRepository.InserirEquipamento(equipamento);
         }
 
-        public Task<List<Equipamento>> BuscarEquipamentos()
+        public async Task<List<Equipamento>> BuscarEquipamentos()
         {
-            throw new NotImplementedException();
+            return (await _equipamentoRepository.BuscarEquipamentos()).ToList();
         }
 
-        public Task<Equipamento> AtualizarEquipamento(EquipamentoDTo model)
+        public async Task<Equipamento> AtualizarEquipamento(UpdateEquipamentoDTo model)
         {
-            throw new NotImplementedException();
+            var equipamento = _mapper.Map<Equipamento>(model);
+            return await _equipamentoRepository.AtualizarEquipamento(equipamento);
         }
 
-        public Task<bool> ExcluirEquipamento(long equipamentoId)
+        public async Task<bool> ExcluirEquipamento(long equipamentoId)
         {
-            throw new NotImplementedException();
+            return await _equipamentoRepository.ExcluirEquipamento(equipamentoId);
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using EcoSolution.Domain.DTos;
+using EcoSolution.Domain.DTos.Base;
 using EcoSolution.Domain.Interface.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +43,7 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("editar-equipamento")]
-        public async Task<IActionResult> AtualizarEquipamento([FromBody] EquipamentoDTo model)
+        public async Task<IActionResult> AtualizarEquipamento([FromBody] UpdateEquipamentoDTo model)
         {
             var equipamento = await _equipamentoService.AtualizarEquipamento(model);
             return QResult(equipamento);
@@ -52,9 +53,9 @@ namespace EcoSolutionApi.Controllers.V1
         [MapToApiVersion(1.0)]
         [Authorize]
         [Route("excluir-equipamento")]
-        public async Task<IActionResult> ExcluirEquipamento([FromBody] long equipamentoId)
+        public async Task<IActionResult> ExcluirEquipamento([FromBody] RemoverDTo model)
         {
-            var equipamento = await _equipamentoService.ExcluirEquipamento(equipamentoId);
+            var equipamento = await _equipamentoService.ExcluirEquipamento(model.Id);
             return QResult(equipamento);
         }
 
