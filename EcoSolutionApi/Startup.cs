@@ -63,7 +63,18 @@ namespace EcoSolutionApi
 
             services.Configure<AppSettings>(Configuration);
 
-            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                    builder.AllowAnyOrigin()   
+                           .AllowAnyMethod()   
+                           .AllowAnyHeader()); 
+            });
+
+
+            services.AddControllers();
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -79,6 +90,8 @@ namespace EcoSolutionApi
 
             app.UseHttpsRedirection();
             app.UseHsts();
+
+            app.UseCors("AllowAll");
 
             app.UseRouting();
 
